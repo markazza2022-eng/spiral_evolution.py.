@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
     <style>
         :root {
@@ -17,23 +17,23 @@
             --accent: #58a6ff;
             --border: #30363d;
         }
-        body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.8; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
-        header { background: #010409; padding: 80px 20px; text-align: center; border-bottom: 1px solid var(--border); }
-        header h1 { font-size: 2.5rem; color: var(--accent); margin: 0; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .paper-card { background: var(--card); padding: 40px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 30px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-        h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-        .math-display { background: #000; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.3rem; color: #79c0ff; overflow-x: auto; }
-        .abstract { font-style: italic; border-left: 4px solid var(--accent); padding-left: 20px; margin: 20px 0; color: #f0f6fc; }
-        footer { text-align: center; padding: 40px; color: #8b949e; font-size: 0.9rem; }
-        .btn { display: inline-block; background: var(--accent); color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; }
+        body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.8; color: var(--text); background: var(--bg); margin: 0; padding: 0; scroll-behavior: smooth; }
+        header { background: #010409; padding: 60px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+        header h1 { font-size: 2.2rem; color: var(--accent); margin: 0; }
+        .container { max-width: 800px; margin: 20px auto; padding: 15px; }
+        .paper-card { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; }
+        h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 1.5rem; }
+        .math-display { background: #000; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.2rem; color: #79c0ff; overflow-x: auto; min-height: 50px; }
+        .abstract { font-style: italic; border-left: 4px solid var(--accent); padding-left: 15px; margin: 20px 0; color: #f0f6fc; }
+        footer { text-align: center; padding: 40px; color: #8b949e; font-size: 0.8rem; }
+        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; border: none; cursor: pointer; }
+        .btn:hover { background: #79c0ff; }
         ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-<header>
+<header id="top">
     <h1>Spiral Curvature Evolution</h1>
     <p>A Dynamic Interpretation of Gravitational Structure</p>
     <p><strong>By Mark J Azzopardi</strong></p>
@@ -44,69 +44,77 @@
     <div class="paper-card">
         <h2>Abstract</h2>
         <div class="abstract">
-            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution. While standard models such as General Relativity describe gravity as curvature of spacetime induced by mass-energy, this work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of that curvature. By incorporating relativistic vorticity and time-dependent energy redistribution, the framework proposes that gravitational systems are inherently dynamic, with spiral-like structures emerging naturally in rotating, non-equilibrium conditions.
+            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution. While standard models such as General Relativity describe gravity as curvature of spacetime induced by mass-energy, this work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of that curvature.
         </div>
     </div>
 
     <div class="paper-card">
         <h2>1. Introduction</h2>
-        <p>Modern gravitational theory describes spacetime as a geometric manifold whose curvature is determined by the distribution of mass and energy. While highly successful, many treatments rely on simplified assumptions such as symmetry or static configurations.</p>
-        <p>However, real astrophysical systems exhibit rotation, energy transfer, and structural asymmetry. This motivates a refined interpretation: <strong>Gravitational curvature is dynamically shaped not only by energy density, but by rotational motion and the continuous redistribution of energy over time.</strong></p>
+        <p>Modern gravitational theory describes spacetime as a geometric manifold. However, real astrophysical systems exhibit rotation and energy transfer. This motivates a refined interpretation: <strong>Gravitational curvature is dynamically shaped by rotational motion and energy redistribution over time.</strong></p>
     </div>
 
     <div class="paper-card">
         <h2>2. Theoretical Foundation</h2>
-        <p>Spacetime curvature is governed by the Einstein field equations:</p>
-        <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
-        <p>In realistic systems, matter is not static. We utilize a relativistic fluid description where rotation is encoded in the velocity field $u^\mu$:</p>
-        <div class="math-display">$$T^{\mu\nu} = (\rho + p)u^\mu u^\nu + p g^{\mu\nu}$$</div>
+        <p>The standard field equations are defined as:</p>
+        <div class="math-display">
+            $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
+        </div>
+        <p>Rotation is intrinsic to the velocity field $u^\mu$ within the energy-momentum tensor:</p>
+        <div class="math-display">
+            $$T^{\mu\nu} = (\rho + p)u^\mu u^\nu + p g^{\mu\nu}$$
+        </div>
     </div>
 
     <div class="paper-card">
         <h2>3. Spiral Curvature Principle</h2>
-        <p>Energy-momentum generates curvature, while rotational dynamics introduce structured flow. Rotating systems are characterized by <strong>vorticity</strong>, defined as:</p>
-        <div class="math-display">$$\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}$$</div>
-        <p>Spiral structures arise from the interaction of radial gravitational attraction and tangential motion (angular momentum). These are emergent solutions of rotating, non-equilibrium systems.</p>
+        <p>Rotating systems are characterized by vorticity, the "twist" of energy flow:</p>
+        <div class="math-display">
+            $$\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}$$
+        </div>
+        <p>Spiral structures arise naturally from the interaction of radial gravity and tangential angular momentum.</p>
     </div>
 
     <div class="paper-card">
-        <h2>4. Evolution Mechanism (The Five Phases)</h2>
+        <h2>4. Evolution Mechanism</h2>
         <ul>
-            <li><strong>Phase I — Diffuse Distribution:</strong> Low energy density and minimal structure.</li>
-            <li><strong>Phase II — Rotational Structuring:</strong> Increasing angular momentum and asymmetry.</li>
-            <li><strong>Phase III — Compression Regime:</strong> High energy density and intensified inward motion.</li>
-            <li><strong>Phase IV — Redistribution:</strong> Energy emission (radiation, jets) and structural rebalancing.</li>
-            <li><strong>Phase V — Re-expansion:</strong> Reduced density and relaxation of curvature.</li>
+            <li><strong>Phase I:</strong> Diffuse Distribution.</li>
+            <li><strong>Phase II:</strong> Rotational Structuring.</li>
+            <li><strong>Phase III:</strong> Compression Regime.</li>
+            <li><strong>Phase IV:</strong> Redistribution (Radiation/Jets).</li>
+            <li><strong>Phase V:</strong> Re-expansion.</li>
         </ul>
     </div>
 
     <div class="paper-card">
-        <h2>5. Mathematical Formulation (The Extension)</h2>
-        <p>To represent rotational structure explicitly, we introduce an effective correction term to account for vorticity:</p>
-        <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$</div>
-        <p>Where $\lambda$ is the <strong>Azzopardi Evolutionary Coupling Constant</strong> and $\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}$.</p>
+        <h2>5. Mathematical Formulation</h2>
+        <p>We propose the <strong>Azzopardi Extension</strong> to the Field Equation to represent this evolution:</p>
+        <div class="math-display">
+            $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$
+        </div>
+        <p>Where $\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}$ and $\lambda$ is the evolutionary coupling constant.</p>
     </div>
 
     <div class="paper-card" style="text-align: center;">
         <h2>Technical Implementation</h2>
-        <p>The numerical engine for this framework is available on GitHub.</p>
-        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">View Source Code</a>
+        <p>The full Python simulation code is hosted on GitHub.</p>
+        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">Explore the Repository</a>
     </div>
 
 </div>
 
 <footer>
     <p>&copy; 2026 Mark J Azzopardi. All rights reserved.</p>
+    <a href="#top" style="color: var(--accent); text-decoration: none;">Back to Top</a>
 </footer>
 
 <script>
-    // Manual trigger for math rendering to ensure it works on all devices
     window.onload = function() {
         renderMathInElement(document.body, {
             delimiters: [
                 {left: "$$", right: "$$", display: true},
                 {left: "$", right: "$", display: false}
-            ]
+            ],
+            throwOnError : false
         });
     };
 </script>
