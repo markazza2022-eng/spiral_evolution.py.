@@ -30,7 +30,8 @@
         .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 5px; border: none; cursor: pointer; }
         .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent) !important; }
         .manifold-photo { width: 100%; max-width: 400px; height: auto; border-radius: 8px; border: 1px solid var(--border); display: block; margin: 20px auto; }
-        .contact-info { margin-top: 20px; line-height: 2; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -44,12 +45,24 @@
 <div class="container">
     <div class="paper-card">
         <h2>Abstract</h2>
-        <p>This paper presents an extension to gravitational interpretation within a relativistic framework, introducing <strong>Spiral Curvature Evolution (SCE)</strong>.</p>
+        <p>This paper presents an extension to gravitational interpretation within a relativistic framework. While standard models describe gravity as static curvature, this work emphasizes that <strong>rotational dynamics and energy flow</strong> play a central role in shaping the evolution of that curvature.</p>
     </div>
 
     <div class="paper-card">
-        <h2>Theoretical Foundation</h2>
+        <h2>The Azzopardi Extension</h2>
+        <p>The framework proposes a modification to the Einstein Field Equations by incorporating relativistic vorticity ($\Theta_{\mu\nu}$) and the evolutionary coupling constant ($\lambda$):</p>
         <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$</div>
+    </div>
+
+    <div class="paper-card">
+        <h2>Evolutionary Phases</h2>
+        <ul>
+            <li><strong>Phase I:</strong> Diffuse Distribution.</li>
+            <li><strong>Phase II:</strong> Rotational Structuring.</li>
+            <li><strong>Phase III:</strong> Compression / Spiral Regime.</li>
+            <li><strong>Phase IV:</strong> Redistribution (Emission/Jets).</li>
+            <li><strong>Phase V:</strong> Re-expansion & Relaxation.</li>
+        </ul>
     </div>
 
     <div class="paper-card">
@@ -63,15 +76,14 @@
 
     <div class="paper-card" style="text-align: center;">
         <h2>Access the Research</h2>
-        <p>Explore the mathematical model or download the full theoretical paper.</p>
+        <p>View the technical repository or download the full theoretical paper.</p>
         <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">Explore Repository</a>
-        
         <a href="full_paper.pdf" class="btn btn-outline">Download Full Paper (PDF)</a>
     </div>
 </div>
 
 <footer>
-    <div class="contact-info">
+    <div>
         <strong>Contact & Inquiries</strong><br>
         Email: <a href="mailto:mr.m.j.azzopardi@gmail.com" style="color: var(--accent);">mr.m.j.azzopardi@gmail.com</a><br>
         Repository: <strong>spiral_evolution.py</strong>
