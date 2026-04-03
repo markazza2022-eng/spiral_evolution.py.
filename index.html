@@ -16,19 +16,21 @@
             --text: #c9d1d9;
             --accent: #58a6ff;
             --border: #30363d;
+            --highlight: #79c0ff;
         }
         body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.8; color: var(--text); background: var(--bg); margin: 0; padding: 0; scroll-behavior: smooth; }
-        header { background: #010409; padding: 60px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+        header { background: #010409; padding: 80px 20px; text-align: center; border-bottom: 1px solid var(--border); }
         header h1 { font-size: 2.2rem; color: var(--accent); margin: 0; }
         .container { max-width: 800px; margin: 20px auto; padding: 15px; }
-        .paper-card { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; }
+        .paper-card { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
         h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 1.5rem; }
-        .math-display { background: #000; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.2rem; color: #79c0ff; overflow-x: auto; min-height: 50px; }
-        .abstract { font-style: italic; border-left: 4px solid var(--accent); padding-left: 15px; margin: 20px 0; color: #f0f6fc; }
+        .math-display { background: #000; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.2rem; color: var(--highlight); overflow-x: auto; }
+        .insight-box { background: rgba(88, 166, 255, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .abstract { font-style: italic; color: #f0f6fc; }
         footer { text-align: center; padding: 40px; color: #8b949e; font-size: 0.8rem; }
-        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; border: none; cursor: pointer; }
-        .btn:hover { background: #79c0ff; }
+        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; }
         ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -44,34 +46,25 @@
     <div class="paper-card">
         <h2>Abstract</h2>
         <div class="abstract">
-            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution. While standard models such as General Relativity describe gravity as curvature of spacetime induced by mass-energy, this work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of that curvature.
+            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution (SCE). This work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of spacetime curvature.
         </div>
     </div>
 
     <div class="paper-card">
         <h2>1. Introduction</h2>
-        <p>Modern gravitational theory describes spacetime as a geometric manifold. However, real astrophysical systems exhibit rotation and energy transfer. This motivates a refined interpretation: <strong>Gravitational curvature is dynamically shaped by rotational motion and energy redistribution over time.</strong></p>
+        <p>Modern gravitational theory describes spacetime as a geometric manifold. However, real astrophysical systems exhibit rotation and energy transfer. Gravitational curvature is dynamically shaped by rotational motion and energy redistribution over time.</p>
     </div>
 
     <div class="paper-card">
         <h2>2. Theoretical Foundation</h2>
         <p>The standard field equations are defined as:</p>
-        <div class="math-display">
-            $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
-        </div>
-        <p>Rotation is intrinsic to the velocity field $u^\mu$ within the energy-momentum tensor:</p>
-        <div class="math-display">
-            $$T^{\mu\nu} = (\rho + p)u^\mu u^\nu + p g^{\mu\nu}$$
-        </div>
+        <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
     </div>
 
     <div class="paper-card">
         <h2>3. Spiral Curvature Principle</h2>
         <p>Rotating systems are characterized by vorticity, the "twist" of energy flow:</p>
-        <div class="math-display">
-            $$\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}$$
-        </div>
-        <p>Spiral structures arise naturally from the interaction of radial gravity and tangential angular momentum.</p>
+        <div class="math-display">$$\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}$$</div>
     </div>
 
     <div class="paper-card">
@@ -87,11 +80,23 @@
 
     <div class="paper-card">
         <h2>5. Mathematical Formulation</h2>
-        <p>We propose the <strong>Azzopardi Extension</strong> to the Field Equation to represent this evolution:</p>
-        <div class="math-display">
-            $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$
-        </div>
+        <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$</div>
         <p>Where $\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}$ and $\lambda$ is the evolutionary coupling constant.</p>
+    </div>
+
+    <div class="paper-card">
+        <h2>6. The Multi-Polar Manifold</h2>
+        <p>The SCE framework visualizes the universe as a dynamic multi-polar system where matter is caught in a persistent state of curvature. This can be conceptualized as an <strong>Inverted Manifold</strong>:</p>
+        <div class="insight-box">
+            <strong>The Azzopardi Intuition:</strong>
+            <p>Imagine the "Top" as a White Hole inversion (The Big Bang source) and the "Bottom" as a Supermassive Black Hole (The ultimate sink). With Black Holes on the "Sides" providing lateral vorticity, the entire system is constantly twisting and pulling. We do not exist in a static space, but in a <strong>Curvature State</strong>, being perpetually threaded through the spiral manifold by these opposing cosmic forces.</p>
+        </div>
+        <p>In this view, the "Spiral" is the only logical path for energy to take as it is squeezed between expansion and contraction.</p>
+    </div>
+
+    <div class="paper-card">
+        <h2>7. Conclusion</h2>
+        <p>Gravity is not merely static—it is <strong>dynamically evolving</strong>. By accounting for the multi-polar influences of expansion and supermassive collapse, we provide a coherent explanation for the structured spiral flow of our universe.</p>
     </div>
 
     <div class="paper-card" style="text-align: center;">
