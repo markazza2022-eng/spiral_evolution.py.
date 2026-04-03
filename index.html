@@ -28,22 +28,18 @@
         .insight-box { background: rgba(88, 166, 255, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; flex: 1; }
         .abstract { font-style: italic; color: #f0f6fc; }
         footer { text-align: center; padding: 40px; color: #8b949e; font-size: 0.8rem; }
-        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; border: none; cursor: pointer; }
-        .btn:hover { background: #79c0ff; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-
-        /* Multi-Polar Section Layout */
-        .polarity-wrapper { display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
-        @media (min-width: 768px) { .polarity-wrapper { flex-direction: row; align-items: flex-start; } }
-        
+        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; border: none; }
         .manifold-photo { 
-            max-width: 300px; 
-            margin: 0 auto; 
+            max-width: 100%; 
+            height: auto;
+            margin-bottom: 20px; 
             display: block; 
             border-radius: 8px; 
-            border: 2px solid var(--border);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+            border: 1px solid var(--border);
+        }
+        @media (min-width: 768px) {
+            .polarity-wrapper { display: flex; gap: 20px; align-items: start; }
+            .manifold-photo { width: 300px; margin-bottom: 0; }
         }
     </style>
 </head>
@@ -60,18 +56,18 @@
     <div class="paper-card">
         <h2>Abstract</h2>
         <div class="abstract">
-            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution (SCE). This work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of spacetime curvature.
+            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution (SCE).
         </div>
     </div>
 
     <div class="paper-card">
         <h2>1. Introduction</h2>
-        <p>Modern gravitational theory describes spacetime as a geometric manifold. However, real astrophysical systems exhibit rotation and energy transfer. Gravitational curvature is dynamically shaped by rotational motion and energy redistribution over time.</p>
+        <p>In your framework, curvature is dynamically shaped by rotational motion and energy redistribution over time.</p>
     </div>
 
     <div class="paper-card">
         <h2>2. Theoretical Foundation</h2>
-        <p>The standard field equations are defined as:</p>
+        <p>The standard field equations:</p>
         <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
     </div>
 
@@ -84,40 +80,36 @@
     <div class="paper-card">
         <h2>4. Evolution Mechanism</h2>
         <ul>
-            <li><strong>Phase I — Diffuse Distribution:</strong> Low energy density and minimal structure.</li>
-            <li><strong>Phase II — Rotational Structuring:</strong> Increasing angular momentum and asymmetry.</li>
-            <li><strong>Phase III — Compression Regime:</strong> High energy density and intensified inward motion.</li>
-            <li><strong>Phase IV — Redistribution:</strong> Energy emission (radiation/jets) and structural rebalancing.</li>
-            <li><strong>Phase V — Re-expansion:</strong> Reduced density and relaxation of curvature.</li>
+            <li><strong>Phase I:</strong> Diffuse Distribution.</li>
+            <li><strong>Phase II:</strong> Rotational Structuring.</li>
+            <li><strong>Phase III:</strong> Compression / Spiral Regime.</li>
+            <li><strong>Phase IV:</strong> Redistribution (Emission/Jets).</li>
+            <li><strong>Phase V:</strong> Re-expansion & Relaxation.</li>
         </ul>
     </div>
 
     <div class="paper-card">
         <h2>5. Mathematical Formulation</h2>
         <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$</div>
-        <p>Where $\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}$ and $\lambda$ is the evolutionary coupling constant.</p>
+        <p>Where $\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}$ and $\lambda$ is the Azzopardi Evolutionary Coupling Constant.</p>
     </div>
 
     <div class="paper-card">
         <h2>6. The Multi-Polar Manifold</h2>
-        <p>The SCE framework visualizes the universe as a dynamic multi-polar system where matter is caught in a persistent state of curvature. This can be conceptualized as an Inverted Manifold.</p>
-        
         <div class="polarity-wrapper">
-            <img src="manifold_map.png" alt="Azzopardi Multi-Polar Manifold Map" class="manifold-photo">
+            <img src="manifold_map.jpg" alt="Azzopardi Multi-Polar Manifold Map" class="manifold-photo">
             
             <div class="insight-box">
                 <strong>The Azzopardi Intuition:</strong>
-                <p>Imagine the "Top" as a White Hole inversion (The Big Bang source) and the "Bottom" as a Supermassive Black Hole (The ultimate sink). With Black Holes on the "Sides" providing lateral vorticity, the entire system is constantly twisting and pulling. We do not exist in a static space, but in a <strong>Curvature State</strong>, being perpetually threaded through the spiral manifold by these opposing cosmic forces.</p>
+                <p>Imagine the "Top" as a White Hole inversion and the "Bottom" as a Supermassive Black Hole. With Black Holes on the "Sides" providing lateral vorticity, the system is constantly twisting and pulling.</p>
             </div>
         </div>
-        
-        <p>In this view, the "Spiral" is the only logical path for energy to take as it is squeezed between expansion and contraction.</p>
     </div>
 
     <div class="paper-card" style="text-align: center;">
         <h2>Technical Implementation</h2>
-        <p>The full Python simulation code is hosted on GitHub.</p>
-        <a href="https://github.com/markazza2022-eng/spiral_evolution.py/" class="btn">Explore the Repository</a>
+        <p>The Python numerical engine uses 4th Order Runge-Kutta for high precision.</p>
+        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">Explore the Repository</a>
     </div>
 
 </div>
