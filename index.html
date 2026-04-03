@@ -4,21 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spiral Curvature Evolution | Mark J Azzopardi</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #e0e0e0; background: #0b0e14; margin: 0; padding: 0; }
-        header { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #4a5568; }
-        header h1 { margin: 0; font-size: 2.5em; color: #63b3ed; }
-        header p { font-size: 1.2em; color: #a0aec0; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .section { background: #1a202c; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        h2 { color: #63b3ed; border-bottom: 1px solid #4a5568; padding-bottom: 10px; }
-        .math { font-size: 1.3em; text-align: center; margin: 20px 0; color: #81e6d9; }
-        .btn { display: inline-block; background: #3182ce; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; transition: 0.3s; }
-        .btn:hover { background: #4299e1; }
-        footer { text-align: center; padding: 40px; color: #718096; font-size: 0.9em; }
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --border-color: #30363d;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            background-color: var(--bg-color); 
+            margin: 0; 
+            padding: 0; 
+        }
+        header { 
+            background: linear-gradient(180deg, #010409 0%, #161b22 100%); 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        header h1 { font-size: 2.8em; color: var(--accent-blue); margin-bottom: 10px; }
+        header p { font-size: 1.3em; color: #8b949e; margin: 5px 0; }
+        
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        
+        .paper-section { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 10px; 
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        h2 { color: var(--accent-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 0; }
+        h3 { color: var(--accent-green); margin-top: 25px; }
+        
+        .abstract { font-style: italic; font-size: 1.1em; color: #f0f6fc; border-left: 4px solid var(--accent-blue); padding-left: 20px; margin-bottom: 30px; }
+        
+        .math-block { 
+            background: #010409; 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center; 
+            margin: 25px 0; 
+            font-size: 1.4em;
+            color: #81e6d9;
+            overflow-x: auto;
+        }
+
+        ul li, ol li { margin-bottom: 12px; }
+        
+        .btn-container { text-align: center; margin-top: 50px; }
+        .btn { 
+            display: inline-block; 
+            background: var(--accent-blue); 
+            color: #ffffff; 
+            padding: 15px 35px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: 0.3s transform ease;
+        }
+        .btn:hover { transform: translateY(-3px); background-color: #79c0ff; }
+
+        footer { text-align: center; padding: 60px; color: #8b949e; border-top: 1px solid var(--border-color); }
+        code { background: #010409; padding: 2px 6px; border-radius: 4px; color: #ff7b72; }
     </style>
 </head>
 <body>
@@ -26,44 +87,78 @@
 <header>
     <h1>Spiral Curvature Evolution</h1>
     <p>A Dynamic Interpretation of Gravitational Structure</p>
-    <p><strong>By Mark J Azzopardi</strong></p>
+    <p style="color: white; font-weight: bold;">Author: Mark J Azzopardi</p>
 </header>
 
 <div class="container">
-    <div class="section">
+
+    <div class="paper-section">
         <h2>Abstract</h2>
-        <p>This paper presents an extension to gravitational interpretation within a relativistic framework. While standard models describe gravity as static curvature induced by mass-energy, this work emphasizes that <strong>rotational dynamics and energy flow</strong> play a central role in shaping the evolution of that curvature.</p>
-    </div>
-
-    <div class="section">
-        <h2>The Azzopardi Extension</h2>
-        <p>By incorporating relativistic vorticity and time-dependent energy redistribution, the framework proposes a modification to the Einstein Field Equations:</p>
-        <div class="math">
-            G_{\mu\nu} = \frac{8\pi G}{c^4} (T_{\mu\nu} + \lambda \Theta_{\mu\nu})
+        <div class="abstract">
+            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution. While standard models such as General Relativity describe gravity as curvature induced by mass-energy, this work emphasizes that rotational dynamics and energy flow play a central role in shaping the evolution of that curvature. By incorporating relativistic vorticity and time-dependent energy redistribution, we propose that gravitational systems naturally emerge as spiral-like structures in rotating, non-equilibrium conditions.
         </div>
-        <p>Where \(\lambda\) is the Evolutionary Coupling Constant and \(\Theta_{\mu\nu}\) represents the contribution of rotational energy structure (vorticity) to spacetime curvature.</p>
     </div>
 
-    <div class="section">
-        <h2>Evolutionary Phases</h2>
+    <div class="paper-section">
+        <h2>1. Introduction</h2>
+        <p>Modern gravitational theory describes spacetime as a geometric manifold. While highly successful, many treatments rely on simplified assumptions such as symmetry or static configurations. However, real astrophysical systems exhibit <strong>rotation, energy transfer, and structural asymmetry</strong>. This paper introduces Spiral Curvature Evolution as a structured extension to account for these dynamic effects.</p>
+    </div>
+
+    <div class="paper-section">
+        <h2>2. Theoretical Foundation</h2>
+        <p>Spacetime curvature is traditionally governed by the Einstein field equations:</p>
+        <div class="math-block">G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}</div>
+        <p>In realistic systems, we adopt a relativistic fluid description where rotation is encoded in the velocity field \(u^\mu\). We define the <strong>Vorticity</strong> (\(\omega\)) as the measure of the local rotation of energy flow:</p>
+        <div class="math-block">\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}</div>
+    </div>
+
+    <div class="paper-section">
+        <h2>3. Spiral Curvature Principle</h2>
+        <p>The core statement of this framework is that energy-momentum generates curvature, while rotational dynamics introduce a structured flow. This results in the emergence of spiral geometries from the interaction of:</p>
         <ul>
-            <li><strong>Phase I:</strong> Diffuse Distribution</li>
-            <li><strong>Phase II:</strong> Rotational Structuring</li>
-            <li><strong>Phase III:</strong> Compression / Spiral Regime</li>
-            <li><strong>Phase IV:</strong> Redistribution (Emission/Jets)</li>
-            <li><strong>Phase V:</strong> Re-expansion & Relaxation</li>
+            <li>Radial gravitational attraction (Inward pull)</li>
+            <li>Tangential motion (Angular momentum)</li>
+            <li>Energy redistribution (Time-dependent flow)</li>
         </ul>
     </div>
 
-    <div class="section" style="text-align: center;">
-        <h2>Open Source Implementation</h2>
-        <p>View the numerical engine and simulation results on GitHub.</p>
-        <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME" class="btn">View on GitHub</a>
+    <div class="paper-section">
+        <h2>4. Mathematical Formulation (Azzopardi Extension)</h2>
+        <p>To explicitly account for the rotational contribution to geometry, we propose a modified Field Equation:</p>
+        <div class="math-block">G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}</div>
+        <p>Where:</p>
+        <ul>
+            <li><strong>\(\lambda\)</strong>: The Azzopardi Evolutionary Coupling Constant.</li>
+            <li><strong>\(\Theta_{\mu\nu}\)</strong>: The Rotational Energy Structure (Vorticity) term, defined as \(\Theta_{\mu\nu} = \omega_{\mu\alpha}\omega^{\alpha}_{\ \nu}\).</li>
+        </ul>
     </div>
+
+    <div class="paper-section">
+        <h2>5. Evolution Phases</h2>
+        <p>Spacetime curvature evolves through five distinct regimes:</p>
+        <ol>
+            <li><strong>Phase I — Diffuse Distribution:</strong> Weak curvature and low density.</li>
+            <li><strong>Phase II — Rotational Structuring:</strong> Increasing angular momentum and asymmetry.</li>
+            <li><strong>Phase III — Compression Regime:</strong> Intensified inward motion and high density.</li>
+            <li><strong>Phase IV — Redistribution:</strong> Energy emission (radiation/jets) and structural rebalancing.</li>
+            <li><strong>Phase V — Re-expansion:</strong> Relaxation of curvature and cycle continuation.</li>
+        </ol>
+    </div>
+
+    <div class="paper-section">
+        <h2>6. Conclusion</h2>
+        <p>Gravity is not merely static curvature—it is <strong>dynamically evolving curvature</strong>. By incorporating rotation and time-dependent flow into our analysis, we provide a coherent explanation for the spiral phenomena observed across the universe, from black hole accretion disks to the grand structures of galaxies.</p>
+    </div>
+
+    <div class="btn-container">
+        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">View Source Code & Simulation</a>
+    </div>
+
 </div>
 
 <footer>
-    &copy; 2026 Mark J Azzopardi. Licensed under MIT.
+    <p>&copy; 2026 Mark J Azzopardi. All rights reserved.</p>
+    <p>Published via GitHub Pages | Scientific Interpretation of Relativistic Frameworks</p>
 </footer>
 
 <script>
