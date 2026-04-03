@@ -24,24 +24,13 @@
         .container { max-width: 800px; margin: 20px auto; padding: 15px; }
         .paper-card { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
         h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; font-size: 1.5rem; }
-        .math-display { background: #000; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.2rem; color: var(--highlight); overflow-x: auto; min-height: 50px; }
-        .insight-box { background: rgba(88, 166, 255, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; flex: 1; }
-        .abstract { font-style: italic; color: #f0f6fc; }
-        footer { text-align: center; padding: 40px; color: #8b949e; font-size: 0.8rem; }
-        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; border: none; cursor: pointer; }
-        .btn:hover { background: #79c0ff; }
-        .manifold-photo { 
-            max-width: 100%; 
-            height: auto;
-            margin-bottom: 20px; 
-            display: block; 
-            border-radius: 8px; 
-            border: 1px solid var(--border);
-        }
-        @media (min-width: 768px) {
-            .polarity-wrapper { display: flex; gap: 20px; align-items: start; }
-            .manifold-photo { width: 300px; margin-bottom: 0; }
-        }
+        .math-display { background: #000; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; font-size: 1.2rem; color: var(--highlight); overflow-x: auto; }
+        .insight-box { background: rgba(88, 166, 255, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        footer { text-align: center; padding: 60px 20px; color: #8b949e; font-size: 0.9rem; border-top: 1px solid var(--border); background: #010409; }
+        .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 5px; border: none; cursor: pointer; }
+        .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent) !important; }
+        .manifold-photo { width: 100%; max-width: 400px; height: auto; border-radius: 8px; border: 1px solid var(--border); display: block; margin: 20px auto; }
+        .contact-info { margin-top: 20px; line-height: 2; }
     </style>
 </head>
 <body>
@@ -53,67 +42,41 @@
 </header>
 
 <div class="container">
-
     <div class="paper-card">
         <h2>Abstract</h2>
-        <div class="abstract">
-            This paper presents an extension to gravitational interpretation within a relativistic framework, introducing the concept of Spiral Curvature Evolution (SCE).
-        </div>
+        <p>This paper presents an extension to gravitational interpretation within a relativistic framework, introducing <strong>Spiral Curvature Evolution (SCE)</strong>.</p>
     </div>
 
     <div class="paper-card">
-        <h2>1. Introduction</h2>
-        <p>Curvature is dynamically shaped by rotational motion and energy redistribution over time.</p>
-    </div>
-
-    <div class="paper-card">
-        <h2>2. Theoretical Foundation</h2>
-        <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
-    </div>
-
-    <div class="paper-card">
-        <h2>3. Spiral Curvature Principle</h2>
-        <div class="math-display">$$\omega_{\mu\nu} = \nabla_{[\mu} u_{\nu]}$$</div>
-    </div>
-
-    <div class="paper-card">
-        <h2>4. Evolution Mechanism</h2>
-        <ul>
-            <li><strong>Phase I:</strong> Diffuse Distribution.</li>
-            <li><strong>Phase II:</strong> Rotational Structuring.</li>
-            <li><strong>Phase III:</strong> Compression / Spiral Regime.</li>
-            <li><strong>Phase IV:</strong> Redistribution (Emission/Jets).</li>
-            <li><strong>Phase V:</strong> Re-expansion & Relaxation.</li>
-        </ul>
-    </div>
-
-    <div class="paper-card">
-        <h2>5. Mathematical Formulation</h2>
+        <h2>Theoretical Foundation</h2>
         <div class="math-display">$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} + \lambda \Theta_{\mu\nu}$$</div>
     </div>
 
     <div class="paper-card">
-        <h2>6. The Multi-Polar Manifold</h2>
-        <div class="polarity-wrapper">
-            <img src="manifold_map.jpg" alt="Azzopardi Multi-Polar Manifold Map" class="manifold-photo">
-            
-            <div class="insight-box">
-                <strong>The Azzopardi Intuition:</strong>
-                <p>Imagine the "Top" as a White Hole inversion and the "Bottom" as a Supermassive Black Hole. With Black Holes on the "Sides" providing lateral vorticity, the system is constantly twisting and pulling.</p>
-            </div>
+        <h2>The Multi-Polar Manifold</h2>
+        <img src="manifold_map.jpg" alt="Azzopardi Multi-Polar Manifold Map" class="manifold-photo">
+        <div class="insight-box">
+            <strong>The Azzopardi Intuition:</strong>
+            <p>Imagine the "Top" as a White Hole inversion and the "Bottom" as a Supermassive Black Hole. With lateral vorticity from the "Sides," the system is perpetually twisting and pulling matter through a spiral manifold.</p>
         </div>
     </div>
 
     <div class="paper-card" style="text-align: center;">
-        <h2>Technical Implementation</h2>
-        <p>The Python numerical engine uses 4th Order Runge-Kutta for high precision.</p>
-        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">Explore the Repository</a>
+        <h2>Access the Research</h2>
+        <p>Explore the mathematical model or download the full theoretical paper.</p>
+        <a href="https://github.com/markazza2022-eng/spiral_evolution.py" class="btn">Explore Repository</a>
+        
+        <a href="full_paper.pdf" class="btn btn-outline">Download Full Paper (PDF)</a>
     </div>
-
 </div>
 
 <footer>
-    <p>&copy; 2026 Mark J Azzopardi. All rights reserved.</p>
+    <div class="contact-info">
+        <strong>Contact & Inquiries</strong><br>
+        Email: <a href="mailto:mr.m.j.azzopardi@gmail.com" style="color: var(--accent);">mr.m.j.azzopardi@gmail.com</a><br>
+        Repository: <strong>spiral_evolution.py</strong>
+    </div>
+    <p style="margin-top: 30px;">&copy; 2026 Mark J Azzopardi. All rights reserved.</p>
     <a href="#top" style="color: var(--accent); text-decoration: none;">Back to Top</a>
 </footer>
 
